@@ -52,8 +52,8 @@ function calculateAge()
             results = results + '<div class="input-group mb-3" id="shareDialog">';
             results = results + '<input type="text" readonly="" class="form-control" placeholder="Share Your Planetary Age with Others" id="share_planetary_age_link" value="' + shareableLink + '" />';
             results = results + '<button class="btn btn-secondary" type="button" id="share_planetary_age_btn" onclick="share_pl_age()"> Copy Link </button>';
-            results = results + '<i class="fa fa-whatsapp" style="font-size:45px; color:green; padding-left:10px"; onclick="shareOnWhatsApp()"></i>';
             results = results + '</div>';
+            results = results + '<i class="fa fa-whatsapp" style="font-size:45px; color:green;"; onclick="shareOnWhatsApp()"></i>';
             $("#age-display").html(results);
         }
     }
