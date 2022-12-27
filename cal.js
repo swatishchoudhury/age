@@ -17,7 +17,7 @@ function calculateAge()
     let birthDate = $("#birth-date").val();
     if(!isValidDate(birthDate))
     { 
-        alert("Please Enter Valid Birthdate");
+        alert("Please Enter Valid Birthdate.");
     }
     else
     {
@@ -33,7 +33,7 @@ function calculateAge()
         const ageInPlutoYears = ageInYears / 248.09;
         if (isNaN(ageInYears))
         {
-            alert("Failure In Calculating Results");
+            alert("Failure In Calculating Results.");
         } 
         else
         {
@@ -51,7 +51,8 @@ function calculateAge()
             results = results + '</p>';
             results = results + '<div class="input-group" id="shareDialog">';
             results = results + '<input type="text" readonly="" class="form-control" placeholder="Share Your Planetary Age with Others" id="share_planetary_age_link" value="' + shareableLink + '" />';
-            results = results + '<button class="btn btn-warning btn-sm" type="button" id="share_planetary_age_btn" onclick="share_pl_age()"> Share </button>';
+            results = results + '<button class="btn btn-secondary" type="button" id="share_planetary_age_btn" onclick="share_pl_age()"> Copy Link </button>';
+            results = results + '<button class="btn btn-success" type="button" id="wp_planetary_age_btn" onclick="shareOnWhatsApp()"> Share Via Whatsapp </button>';
             results = results + '</div>';
             
             $("#age-display").html(results);
@@ -64,6 +65,10 @@ function share_pl_age()
     let shareUrl = $("#share_planetary_age_link").val();
     navigator.clipboard.writeText(shareUrl);
     alert("Sharing Link Copied");
+}
+function shareOnWhatsApp() {
+    let shareUrl = 'whatsapp://send?text=' + $("#share_planetary_age_link").val();;
+    window.open(shareUrl, '_blank');
 }
 
 function getUserBday()
