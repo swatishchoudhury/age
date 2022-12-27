@@ -49,12 +49,11 @@ function calculateAge()
             results = results + '<b>Age on Neptune:  </b> ' + ageInNeptuneYears + ' neptunian years<br/>';
             results = results + '<b>Age on Pluto:  </b> ' + ageInPlutoYears + ' plutoian years<br/>';
             results = results + '</p>';
-            results = results + '<div class="input-group" id="shareDialog">';
+            results = results + '<div class="input-group mb-3" id="shareDialog">';
             results = results + '<input type="text" readonly="" class="form-control" placeholder="Share Your Planetary Age with Others" id="share_planetary_age_link" value="' + shareableLink + '" />';
             results = results + '<button class="btn btn-secondary" type="button" id="share_planetary_age_btn" onclick="share_pl_age()"> Copy Link </button>';
-            results = results + '<button class="btn btn-success" type="button" id="wp_planetary_age_btn" onclick="shareOnWhatsApp()"> Share Via Whatsapp </button>';
+            results = results + '<i class="fa fa-whatsapp" style="font-size:45px; color:green; padding-left:10px"; onclick="shareOnWhatsApp()"></i>';
             results = results + '</div>';
-            
             $("#age-display").html(results);
         }
     }
