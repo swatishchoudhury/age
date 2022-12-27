@@ -24,20 +24,20 @@ function calculateAge()
     const ageInNeptuneYears = ageInYears / 164.8;
     const ageInPlutoYears = ageInYears / 248.09;
     if (isNaN(ageInYears)) {
-        alert('Please enter a valid birth date');
+        alert('Please enter a valid birth date.');
       } else {
       document.querySelector('#age-display').innerHTML = `
         <br>Age in Earth: ${ageInYears} years.<br><br>
         
-        Age in Mercury: ${ageInMercuryYears} mercury years.<br>
-        Age in Venus: ${ageInVenusYears} venus years.<br>
-        Age in Earth: ${ageInYears} years<br>
-        Age in Mars: ${ageInMarsYears} mars years.<br>
-        Age in Jupiter: ${ageInJupiterYears} jupiter years.<br>
-        Age in Saturn: ${ageInSaturnYears} saturn years.<br>
-        Age in Uranus: ${ageInUranusYears} uranus years.<br>
-        Age in Neptune: ${ageInNeptuneYears} neptune years.<br>
-        Age in Pluto: ${ageInPlutoYears} pluto years.<br><br>
+        Age in Mercury: ${ageInMercuryYears} mercurian years.<br>
+        Age in Venus: ${ageInVenusYears} venusian years.<br>
+        Age in Earth: ${ageInYears} years.<br>
+        Age in Mars: ${ageInMarsYears} martian years.<br>
+        Age in Jupiter: ${ageInJupiterYears} jovian years.<br>
+        Age in Saturn: ${ageInSaturnYears} saturnian years.<br>
+        Age in Uranus: ${ageInUranusYears} uranian years.<br>
+        Age in Neptune: ${ageInNeptuneYears} neptunian years.<br>
+        Age in Pluto: ${ageInPlutoYears} plutoian years.<br><br>
       `;
       }
         // Update the shareable link
