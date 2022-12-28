@@ -5,14 +5,11 @@ $(document).ready(function() {
     {
         $("#birth-date").val(getUserBday());
         calculateAge();
-        startIntv = setInterval(calculateAge, 1000);
     }
 });
 
 $("#calculate-birth-date").on("click", function(){
-    clearInterval(startIntv);
     calculateAge();
-    startIntv = setInterval(calculateAge, 1000);
 });
 
 function calculateAge()
@@ -59,6 +56,8 @@ function calculateAge()
             results = results + '<button class="btn btn-dark" type="button" id="wp_planetary_age_btn" onclick="shareOnWhatsApp()"><i class="fa fa-whatsapp" style="font-size:40px; color:#00000;"; onclick="shareOnWhatsApp()"></i></button>'; 
             results = results + '</div>';
             $("#age-display").html(results);
+            clearInterval(startIntv);
+            startIntv = setInterval(calculateAge, 1000);
         }
     }
 }
@@ -113,6 +112,3 @@ function isValidDate(dateString)
   if(!dNum && dNum !== 0) return false;
   return d.toISOString().slice(0,10) === dateString;
 }
-window.onbeforeunload = function() {
-    clearInterval(startIntv);
-};
