@@ -1,14 +1,18 @@
 let startIntv = "";
+
 $(document).ready(function() {
     if(getUserBday() !== "" && getUserBday() !== null && getUserBday() !== undefined)
     {
         $("#birth-date").val(getUserBday());
         calculateAge();
+        startIntv = setInterval(calculateAge, 1000);
     }
 });
 
 $("#calculate-birth-date").on("click", function(){
+    clearInterval(startIntv);
     calculateAge();
+    startIntv = setInterval(calculateAge, 1000);
 });
 
 function calculateAge()
@@ -49,11 +53,11 @@ function calculateAge()
             results = results + '<b>Age on Neptune:  </b> ' + ageInNeptuneYears + ' neptunian years<br/>';
             results = results + '<b>Age on Pluto:  </b> ' + ageInPlutoYears + ' plutoian years<br/>';
             results = results + '</p>';
-            results = results + '<div class="input-group mb-3" id="shareDialog">';
+            results = results + '<div class="input-group " id="shareDialog">';
             results = results + '<input type="text" readonly="" class="form-control" placeholder="Share Your Planetary Age with Others" id="share_planetary_age_link" value="' + shareableLink + '" />';
-            results = results + '<button class="btn btn-secondary" type="button" id="share_planetary_age_btn" onclick="share_pl_age()"> Copy Link </button>';
+            results = results + '<button class="btn btn-secondary" type="button" id="share_planetary_age_btn" onclick="share_pl_age()"> Copy Link </button>'; 
+            results = results + '<button class="btn btn-dark" type="button" id="wp_planetary_age_btn" onclick="shareOnWhatsApp()"><i class="fa fa-whatsapp" style="font-size:40px; color:#00000;"; onclick="shareOnWhatsApp()"></i></button>'; 
             results = results + '</div>';
-            results = results + '<i class="fa fa-whatsapp" style="font-size:45px; color:green;"; onclick="shareOnWhatsApp()"></i>';
             $("#age-display").html(results);
         }
     }
@@ -109,3 +113,6 @@ function isValidDate(dateString)
   if(!dNum && dNum !== 0) return false;
   return d.toISOString().slice(0,10) === dateString;
 }
+window.onbeforeunload = function() {
+    clearInterval(startIntv);
+};
