@@ -56,8 +56,6 @@ function calculateAge()
             results = results + '<button class="btn btn-dark" type="button" id="wp_planetary_age_btn" onclick="shareOnWhatsApp()"><i class="fa fa-whatsapp" style="font-size:40px; color:#00000;"; onclick="shareOnWhatsApp()"></i></button>'; 
             results = results + '</div>';
             $("#age-display").html(results);
-            clearInterval(startIntv);
-            startIntv = setInterval(calculateAge, 1000);
         }
     }
 }
