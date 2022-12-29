@@ -64,7 +64,7 @@ function share_pl_age()
 {
     let shareUrl = $("#share_planetary_age_link").val();
     navigator.clipboard.writeText(shareUrl);
-    alert("Sharing Link Copied");
+    alert("Sharing Link Copied.");
 }
 function shareOnWhatsApp() {
     let shareUrl = 'whatsapp://send?text=' + $("#share_planetary_age_link").val();;
